@@ -52,7 +52,7 @@ try:
     # time.sleep(3)
 
     logging.info("3.read bmp file")
-    Himage = Image.open(os.path.join(picdir, '7in3f3.bmp')).convert("P").quantize(colors=2, method=Image.Quantize.MEDIANCUT, kmeans=2, palette="ADAPTIVE", dither=Dither.FLOYDSTEINBERG)
+    Himage = Image.open(os.path.join(picdir, '7in3f3.bmp')).convert("L", dither=Image.Dither.FLOYDSTEINBERG)
     epd.display(epd.getbuffer(Himage))
     time.sleep(3)
     
