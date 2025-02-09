@@ -12,7 +12,6 @@ from waveshare_epd import epd7in3f
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
-import Dither
 
 logging.basicConfig(level=logging.DEBUG)
 
