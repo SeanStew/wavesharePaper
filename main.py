@@ -1,9 +1,4 @@
-#!/usr/bin/python
-# -*- coding:utf-8 -*-
-import sys
 import os
-picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
-
 import logging
 from lib import epd7in3f
 import time
@@ -20,9 +15,16 @@ try:
     epd.init()
     epd.Clear()
 
-    font = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
+    # Get the directory of the current script (`main.py`)
+    script_dir = os.path.dirname(os.path.realpath(__file__))
 
-    Himage = Image.open(os.path.join(picdir, '7in3f1.bmp'))
+    # Go up one directory to reach the project root
+    project_root = os.path.dirname(script_dir)
+
+
+    font = ImageFont.truetype(os.path.join(project_root, 'pic', 'font.ttc'), 18)
+
+    Himage = Image.open(os.path.join(project_root, 'pic', '7in3f1.bmp'))
 
     draw = ImageDraw.Draw(Himage)
     draw.text((5, 0), 'Testing', font = font, fill = epd.RED)
