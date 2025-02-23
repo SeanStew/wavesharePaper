@@ -3,7 +3,6 @@ import logging
 from lib import epd7in3f
 import time
 from PIL import Image,ImageDraw,ImageFont
-import traceback
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -21,8 +20,7 @@ try:
     # Go up one directory to reach the project root
     project_root = os.path.dirname(script_dir)
 
-
-    font = ImageFont.truetype(os.path.join(project_root, 'pic', 'font.ttc'), 18)
+    font = ImageFont.truetype(os.path.join(project_root, 'pic', 'Font.ttc'), 18)
 
     Himage = Image.open(os.path.join(project_root, 'pic', '7in3f1.bmp'))
 
