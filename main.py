@@ -20,8 +20,10 @@ try:
     # Go up one directory to reach the project root
     project_root = os.path.dirname(script_dir)
 
+    logging.info("load font")
     font = ImageFont.truetype(os.path.join(project_root, 'pic', 'Font.ttc'), 18)
 
+    logging.info("load image")
     Himage = Image.open(os.path.join(project_root, 'pic', '7in3f1.bmp'))
 
     draw = ImageDraw.Draw(Himage)
