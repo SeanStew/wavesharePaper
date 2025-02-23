@@ -8,7 +8,7 @@ if os.path.exists(libdir):
     sys.path.append(libdir)
 
 import logging
-from lib import epd7in3f
+import epd7in3f
 import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)
 try:
     logging.info("Running Main")
     epd = epd7in3f.EPD()   
-    
+
     logging.info("init and Clear")
     epd.init()
     epd.Clear()
