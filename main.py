@@ -15,16 +15,13 @@ try:
     epd.Clear()
 
     # Get the directory of the current script (`main.py`)
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-
-    # Go up one directory to reach the project root
-    project_root = os.path.dirname(script_dir)
+    root_dir = os.path.dirname(os.path.realpath(__file__))
 
     logging.info("load font")
-    font = ImageFont.truetype(os.path.join(project_root, 'pic', 'Font.ttc'), 18)
+    font = ImageFont.truetype(os.path.join(root_dir, 'resources', 'Font.ttc'), 18)
 
     logging.info("load image")
-    Himage = Image.open(os.path.join(project_root, 'pic', '7in3f1.bmp'))
+    Himage = Image.open(os.path.join(root_dir, 'resources', '7in3f1.bmp'))
 
     draw = ImageDraw.Draw(Himage)
     draw.text((5, 0), 'Testing', font = font, fill = epd.RED)
